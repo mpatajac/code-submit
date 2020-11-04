@@ -1,0 +1,72 @@
+body, input, textarea, button {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background-color: #fefefe;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
+	margin: 2em auto;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+label, span, button {
+	margin-top: 2em;
+}
+
+label {
+	margin-left: .5em;
+	margin-bottom: .2em;
+	font-size: .9em;
+	color: #333;
+}
+
+label span {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+input, textarea, button {
+	border: 1px solid gray;
+	border-radius: .3em;
+	outline: none;
+	padding: 1em;
+	font-size: 1.2em;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	color: #333;
+}
+
+input:focus-within, textarea:focus-within {
+	border: 2px solid indigo;
+}
+
+
+button {
+	padding: .5em;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #dddddd;
+	background-color: indigo;
+	letter-spacing: 1px;
+}
+
+#code-container {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 1em;
+}
+
+#status-span {
+	text-align: center;
+}

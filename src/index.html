@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ngrok test</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<label for="title">
+			<span>Naslov</span>
+		</label>
+		<input type="text" name="title" id="title" required>
+
+		<label for="name">
+			<span>Ime</span>&nbsp; (nije nužno)
+		</label>
+		<input type="text" name="name" id="name">
+
+		<label for="code-container">
+			<span>Kod</span>&nbsp; (preporuka: copy-paste iz drugog editora)
+		</label>
+		<textarea name="code-container" id="code-container" cols="80" rows="10"></textarea>
+
+		<label for="message">
+			<span>Poruka</span>
+		</label>
+		<textarea name="message" id="message" cols="30" rows="5"></textarea>
+
+		<button type="submit" id="send" onclick="send()">Pošalji</button>
+
+		<span id="statusSpan"></span>
+	</div>
+
+	<script src="main.js"></script>
+</body>
+
+</html>
