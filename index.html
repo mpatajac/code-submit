@@ -17,7 +17,7 @@
 		crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-light" onload="init()">
 	<div class="container d-flex flex-column my-5">
 		<div class="form-group">
 			<label for="title" class="text-dark">
@@ -50,6 +50,20 @@
 
 		<button type="submit" id="send" class="btn btn-primary btn-lg btn-block my-3 font-weight-bold"
 			onclick="send()">Pošalji</button>
+
+		<div class="alert alert-success alert-dismissible show fade" role="alert" id="alert-success">
+			Poruka uspješno poslana!
+			<button type="button" class="close" aria-label="Close" onclick="$('#alert-success').hide(100);">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+		<div class="alert alert-danger alert-dismissible show fade" role="alert" id="alert-fail">
+			Dogodila se greška pri slanju poruke.
+			<button type="button" class="close" aria-label="Close" onclick="$('#alert-fail').hide(100);">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
 
 	</div>
 

@@ -1,5 +1,10 @@
-const url = "https://bddce4aa7b83.ngrok.io"
+const url = "https://e596d1800c17.ngrok.io"
 const api =  `${url}/api`;
+
+function init() {
+	$('#alert-success').hide();
+	$('#alert-fail').hide();
+}
 
 function send() {
 	const name = document.getElementById("name").value;
@@ -19,22 +24,17 @@ function send() {
 		url: `${api}/send`,
 		data: JSON.stringify(data),
 		contentType: 'application/json',
-	}).done((response) => {
-			if (response == "ok") {
-				console.log("Message sent!");
-				setStatusSpan("Message sent!", "green");
-			} else {
-				console.error("Something went wrong...");
-				setStatusSpan("Something went wrong...", "red");
-			}
+		success: _ => {
+			$('#alert-success').show(100);
+			setTimeout(() => {
+				$('#alert-success').hide(100);
+			}, 5000);
+		},
+		error: _ => {
+			$('#alert-fail').show(100);
+			setTimeout(() => {
+				$('#alert-fail').hide(100);
+			}, 5000);
 		}
-	);
-}
-
-function setStatusSpan(text, color) {
-	const statusSpan = document.getElementById("statusSpan");
-	statusSpan.innerHTML = text;
-	statusSpan.style.color = color;
-	statusSpan.style.display = "visible";
-	setTimeout(() => statusSpan.style.display = "none", 5000);
+	});
 }
