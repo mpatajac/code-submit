@@ -6,6 +6,7 @@ function init() {
 	$('#no-connection-established').hide();
 	
 	$('#alert-success').hide();
+	$('#alert-warning').hide();
 	$('#alert-fail').hide();
 
 	initialRequest();
@@ -43,6 +44,10 @@ function send() {
 		updateValidation('code-container');
 		updateValidation('message');
 
+		$('#alert-warning').show(100);
+		setTimeout(() => {
+			$('#alert-warning').hide(100);
+		}, 5000);
 		return;
 	}
 

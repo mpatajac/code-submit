@@ -62,9 +62,18 @@
 			<button type="submit" id="send" class="btn btn-primary btn-lg btn-block my-3 font-weight-bold"
 				onclick="send()">Pošalji</button>
 
+
+			<!-- Alerts -->
 			<div class="alert alert-success alert-dismissible show fade" role="alert" id="alert-success">
 				Poruka uspješno poslana!
 				<button type="button" class="close" aria-label="Close" onclick="$('#alert-success').hide(100);">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="alert alert-warning alert-dismissible show fade" role="alert" id="alert-warning">
+				Nisu popunjena sva tražena polja.
+				<button type="button" class="close" aria-label="Close" onclick="$('#alert-warning').hide(100);">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
