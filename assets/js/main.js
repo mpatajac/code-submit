@@ -1,10 +1,29 @@
-const url = "https://e596d1800c17.ngrok.io"
+const url = "https://4340993ec07d.ngrok.io"
 const api =  `${url}/api`;
 
 function init() {
+	$('#connection-established').hide();
+	$('#no-connection-established').hide();
+	
 	$('#alert-success').hide();
 	$('#alert-fail').hide();
+
+	initialRequest();
 }
+
+function initialRequest() {
+	$.ajax({
+		method: "POST",
+		url: `${api}`,
+		success: _ => {
+			$('#connection-established').show(500);
+		},
+		error: _ => {
+			$('#no-connection-established').show(500);
+		}
+	});
+}
+
 
 function send() {
 	const name = document.getElementById("name").value;

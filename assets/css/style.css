@@ -31,3 +31,8 @@ strong {
 .close {
 	outline: none !important;
 }
+
+#no-connection-established {
+	margin: 0;
+	margin-top: 15vh;
+}
