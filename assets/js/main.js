@@ -1,4 +1,4 @@
-const url = "https://4340993ec07d.ngrok.io"
+const url = "https://a6740663daa4.ngrok.io"
 const api =  `${url}/api`;
 
 function init() {
@@ -26,17 +26,25 @@ function initialRequest() {
 
 
 function send() {
-	const name = document.getElementById("name").value;
-	const title = document.getElementById("title").value;
-	const message = document.getElementById("message").value;
-	const code = document.getElementById("code-container").value;
+	const name = document.getElementById("name");
+	const title = document.getElementById("title");
+	const message = document.getElementById("message");
+	const code = document.getElementById("code-container");
 
 	const data = {
-		name,
-		title,
-		message,
-		code
+		name: name.value,
+		title: title.value,
+		message: message.value,
+		code: code.value
 	};
+
+	if (!isValid(data)) {
+		updateValidation('title');
+		updateValidation('code-container');
+		updateValidation('message');
+
+		return;
+	}
 
 	$.ajax({
 		method: "POST",
@@ -56,4 +64,15 @@ function send() {
 			}, 5000);
 		}
 	});
+}
+
+
+function isValid(data) {
+	return data.title && data.code && data.message;
+}
+
+function updateValidation(id) {
+	const elem = document.getElementById(id);
+	elem.classList.remove("is-valid", "is-invalid");
+	elem.classList.add(`is-${elem.value ? "" : "in"}valid`);
 }
