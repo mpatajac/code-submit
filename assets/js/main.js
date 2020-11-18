@@ -1,4 +1,4 @@
-const url = "https://a6740663daa4.ngrok.io"
+const url = "https://0a758ef1549c.ngrok.io"
 const api =  `${url}/api`;
 
 function init() {
@@ -40,10 +40,6 @@ function send() {
 	};
 
 	if (!isValid(data)) {
-		updateValidation('title');
-		updateValidation('code-container');
-		updateValidation('message');
-
 		$('#alert-warning').show(100);
 		setTimeout(() => {
 			$('#alert-warning').hide(100);
@@ -80,4 +76,10 @@ function updateValidation(id) {
 	const elem = document.getElementById(id);
 	elem.classList.remove("is-valid", "is-invalid");
 	elem.classList.add(`is-${elem.value ? "" : "in"}valid`);
+}
+
+function updateValidationAll() {
+	updateValidation('title');
+	updateValidation('code-container');
+	updateValidation('message');
 }
