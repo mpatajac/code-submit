@@ -19,6 +19,8 @@ input, textarea {
           box-shadow: none;
   -webkit-transition: all 300ms ease !important;
   transition: all 300ms ease !important;
+  -webkit-transition-property: margin-left, margin-top, margin-bottom !important;
+  transition-property: margin-left, margin-top, margin-bottom !important;
 }
 
 input:hover, input:active, input:focus, textarea:hover, textarea:active, textarea:focus {
@@ -29,12 +31,36 @@ input:hover, input:active, input:focus, textarea:hover, textarea:active, textare
   margin-left: .3rem !important;
 }
 
-.form-control.is-invalid {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-1 -1 6 6'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") !important;
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  opacity: .75 !important;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: .75 !important;
+}
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  opacity: .75 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  opacity: .75 !important;
 }
 
 #code-container {
   font-family: 'Roboto Mono', monospace !important;
+}
+
+.form-control.is-invalid {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-1 -1 6 6'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") !important;
+}
+
+.is-valid {
+  border: 1px solid #28a745 !important;
+}
+
+.is-invalid:not(:focus) {
+  border: 1px solid red !important;
 }
 
 .alert {
