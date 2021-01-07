@@ -1,4 +1,4 @@
-const url = "https://af0953d288eb.ngrok.io"
+const url = "https://0917b9c84aa2.ngrok.io"
 const api =  `${url}/api`;
 
 function init() {
